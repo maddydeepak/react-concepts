@@ -6,14 +6,255 @@ ES7 + react / redux
 GitLens - Git supercharged
 Prettier - code formatter
 vscode-icons
-emits
+Emmets
 
 Homework - 
 Read about emmet - VS code 
 What is CDN
 What is crossorigin - used in script tag
 What is difference between async and defer - watch akshay video on Youtube
+Revise Namaste JS on YT. [IMP]
 
+
+Below notes taken from @vickyganesan [GitHub]
+
+1)What is Emmet
+========================
+
+Emmet is a free add-on for your text editor. 
+It allows you to type shortcuts that are then expanded into full pieces of code.
+By using Emmet, developers type less, they save both
+
+ # By using simple abbreviations that are then converted into code blocks.
+
+Add Emmet to React in VSCode
+==============================
+
+Go to settings > extensions > emmet > include languages and add javascript as the item 
+and javascriptreact as the value.
+
+
+2)Difference between a Library and Framework
+
+    Both libraries and frameworks are reusable code written by someone else
+
+    Library : It performs a set of specific and well-defined operations. 
+              Examples : Network protocols, compression,image manipulation, 
+              string utilities, regular expression evaluation, math etc.
+
+
+    A library : is like going to Ikea. 
+        You already have a home, but you need a bit of help
+        with furniture.You don’t feel like making your own table from scratch.
+        Ikea allows you to pick and choose different things to go in your home. 
+        You are in control.
+
+
+    A framework : on the other hand, is like building a model home.
+        You have a set of blueprints and a few limited choices when it comes 
+        to architecture and design. Ultimately, the contractor and blueprint are in control.
+        And they will let you know when and where you can provide your input.
+
+    Technical Difference
+
+        ## When you use a library, you are in charge of the flow of the application.
+            You are choosing when and where to call the library
+
+        ## When you use a framework, the framework is in charge of the flow. 
+            It provides some places for you to plug in your code, 
+            but it calls the code you plugged in as needed.
+
+    What is a CDN?
+    ===============
+
+    A content delivery network (CDN) refers to a geographically distributed group of servers
+    which work together to provide fast delivery of Internet content.
+
+    Why do we use it
+    ================
+
+    It does help cache content at the network edge, which improves website performance.
+    Many websites struggle to have their performance needs met by traditional hosting services, 
+    which is why they opt for CDNs.
+
+
+    Why is React known as React?
+    ==============================
+
+    React was developed for applications (Facebook) that have constantly changing data.
+    Since React is a front-end framework or the “View” in MVC, this means that as the
+    user clicks around and changes the app’s data, the view should “react” or change
+    with those user events.  User events being mouse clicks, typing, submitting a form.
+
+
+
+
+    Why the crossorigin Attribute?
+    ================================
+
+    If you serve React from a CDN,
+    We recommend to keep the crossorigin 
+    attribute set.
+
+    <script crossorigin src="..."></script>
+
+
+    We also recommend to verify that the CDN you are using
+    sets the Access-Control-Allow-Origin: * HTTP header:
+
+    Breif 1
+    ========
+
+    # The crossorigin attribute sets the mode of the request to an HTTP CORS Request.
+    # Web pages often make requests to load resources on other servers.
+    # Here is where CORS comes in. 
+    # A cross-origin request is a request for a resource from another domain
+    (e.g. style sheets, iframes, images, fonts, or scripts) from another domain
+
+    Breif 2
+    ========
+
+    # crossorigin attribute is used to share the resources from one domain to another domain.
+    # Basically, it is used to handle the CORS request.
+    # It is used to handle the CORS request that checks
+    # whether it is safe to allow for sharing the resources from other domains.
+
+    
+    What is diference between React and ReactDOM
+    =============================================
+
+   # React and ReactDOM were only recently split into two different libraries
+   # All ReactDOM functionality was part of React
+   # As the name implies, ReactDOM is the glue between React and the DOM.
+   # You will only use it for one single thing: mounting with ReactDOM.render(). 
+   # Another useful feature of ReactDOM is ReactDOM.findDOMNode().
+
+   You use React to define and create your elements, 
+   for lifecycle hooks, etc.
+
+   Reason:
+
+        # React and ReactDOM were split into two libraries due to the arrival of React Native.
+        # React = contains functionality utilised in web and mobile apps. 
+        # ReactDOM = functionality is utilised only in web apps. 
+
+    Breif 1
+    =========
+
+    React is a JavaScript library for building User Interfaces and 
+    ReactDOM is the JavaScript library that allows React to interact with the DOM.
+
+
+    Breif 2
+    ========
+
+    React:       A javascript library, designed for building user interfaces
+    React-DOM:   A complimentary library to React which glues React to the browser DOM
+
+
+    What is difference between react.development.js and react.production.js
+    =======================================================================
+
+    The development build is used - as the name suggests - for development reasons. 
+    You have Source Maps, debugging and often times hot reloading ability in those builds.
+
+
+    The production build, on the other hand, runs in production mode
+    which means this is the code running on your client's machine.
+    The production build runs uglify and builds your source files into one or multiple minimized files.
+    It also extracts CSS and images and of course any other sources you're loading with Webpack.
+
+
+    async, defer
+    ==============
+
+    # Scripts are often “heavier” than HTML: their download size is larger, and processing time is also longer.
+    # When the browser loads HTML and comes across a <script>...</script> tag, 
+    # It can’t continue building the DOM. It must execute the script right now. 
+    # The same happens for external scripts <script src="..."></script>: 
+    # The browser must wait for the script to download, execute the downloaded script,
+    # and only then can it process the rest of the page.
+
+    two important issues:
+    ==================
+    # Scripts can’t see DOM elements below them, so they can’t add handlers etc.
+    # If there’s a bulky script at the top of the page, it “blocks the page”.
+    # Users can’t see the page content till it downloads and runs
+
+     some workarounds to that
+     ========================
+
+     ## we can put a script at the bottom of the page.
+
+
+     <body>
+         ...all content is above the script...
+        <script src="https://javascript.info/article/script-async-defer/long.js?speed=1"></script>
+    </body>
+
+      #  Luckily, there are two <script> attributes 
+     ## that solve the problem for us: defer and async..
+
+    
+
+    defer
+    =======
+
+
+    # The defer attribute tells the browser not to wait for the script. 
+    # Instead, the browser will continue to process the HTML, build DOM. 
+    # The script loads “in the background”, and then runs when the DOM is fully built.
+    # Scripts with defer never block the page.
+    # always execute when the DOM is ready 
+    ## The defer attribute is only for external scripts
+    #  The defer attribute is ignored if the <script> tag has no src.
+    # ensures that the relative order is kept. So even though small.js loads first,
+    # It still waits and runs after long.js executes.
+
+    <script defer src="https://javascript.info/article/script-async-defer/long.js"></script>
+    <script defer src="https://javascript.info/article/script-async-defer/small.js"></script>
+
+
+
+    ## Scripts loads in BG After Dom fully built its starts to run..
+
+
+    async
+    ======
+
+     It also makes the script non-blocking. 
+     But it has important differences in the behavior.
+
+     async scripts load in the background and run when ready. 
+     The DOM and other scripts don’t wait for them, and they don’t wait for anything.
+     A fully independent script that runs when loaded. As simple, as it can get, right?
+
+
+    # A smaller script small.js goes second, but probably loads before long.js,
+    # So small.js runs first. Although, it might be that long.js loads first, 
+    # if cached, then it runs first.
+    # In other words, async scripts run in the “load-first” order.
+
+    Dynamic scripts
+    ====================
+
+    There’s one more important way of adding a script to the page.
+
+        We can create a script and append it to the document dynamically using JavaScript:
+
+        let script = document.createElement('script');
+        script.src = "/article/script-async-defer/long.js";
+        document.body.append(script); // (*)
+
+       //## The script starts loading as soon as it’s appended to the document (*).
+
+       Dynamic scripts behave as “async” by default.
+
+    # They don’t wait for anything, nothing waits for them.
+    # The script that loads first – runs first (“load-first” order).
+
+
+=======================Chapter One =========================================
 
 
 
