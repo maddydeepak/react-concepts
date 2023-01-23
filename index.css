@@ -1,3 +1,56 @@
-#container {
+/* #container {
   background-color: aquamarine;
+} */
+.header {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+}
+.header > a > img {
+  width: 100px;
+}
+.header > ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+.header > ul > li {
+  margin: 10px;
+}
+.body {
+  margin-left: -10px;
+}
+.card {
+  border: 1px solid black;
+  width: 150px;
+  padding: 10px;
+  margin: 10px;
+}
+.card > img {
+  width: 100%;
+}
+.restaurant-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.shimmer-card {
+  width: 150px;
+  height: 200px;
+  padding: 10px;
+  margin: 10px;
+  background: lightgray;
+  animation: mymove 2s infinite;
+}
+
+@keyframes mymove {
+  from {
+    background-color: lightgray;
+  }
+  to {
+    background-color: white;
+  }
+}
+.footer {
+  border: 1px solid black;
+  margin-top: 10px;
 }
