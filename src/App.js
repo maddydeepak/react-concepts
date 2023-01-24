@@ -8,6 +8,7 @@ import Contact from "./components/Contact";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Instamart from "./components/Instamart";
 import Error from "./components/Error";
+import RestaurantMenu from "./components/RestaurantMenu";
 
 // const heading1 = React.createElement("h1", { id: "title1" }, "Namaste One !");
 // const heading2 = React.createElement("h2", { id: "title2" }, "Namaste Two !");
@@ -45,6 +46,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/restaurant/:resId",
+        element: <RestaurantMenu />,
       },
     ],
   },

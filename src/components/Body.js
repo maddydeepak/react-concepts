@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { filterData } from "../components/utils/helper";
 import useOnline from "../components/utils/useOnline";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [restaurants, setRestaurants] = useState([]);
@@ -11,7 +12,6 @@ const Body = () => {
   const [filteredRestaurants, setFilteredRestaurants] = useState();
 
   useEffect(() => {
-    console.log("use effect is called");
     fetchRestaurants();
   }, []);
   async function fetchRestaurants() {
@@ -57,7 +57,9 @@ const Body = () => {
           <h1>No Restaurants Found! </h1>
         ) : (
           filteredRestaurants.map((item) => (
-            <RestaurantCard {...item.data} key={item.data.id} />
+            <Link to={"/restaurant/" + item.data.id} key={item.data.id}>
+              <RestaurantCard {...item.data} />
+            </Link>
           ))
         )}
       </div>
