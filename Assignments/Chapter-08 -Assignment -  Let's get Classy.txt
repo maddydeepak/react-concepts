@@ -1,0 +1,34 @@
+Chapter 08 - Let's get Classy
+
+Theory Assignment:
+
+How do you create Nested Routes react-router-dom cofiguration</li>
+Read abt createHashRouter, createMemoryRouter from React Router docs.</li>
+What is the order of life cycle method calls in Class Based Components</li>
+Why do we use componentDidMount?</li>
+Why do we use componentWillUnmount? Show with example</li>
+(Research) Why do we use super(props) in constructor?</li>
+(Research) Why can't we have the callback function of useEffect async?</li>
+
+Coding Assignment:
+
+Create a Class Based Component 
+	
+Create 2 class based child components</li>
+Pass props from Parent to child</li>
+Create a constructor</li>
+Create a state variable inside child</li>
+Use this.setState to update it</li>
+What if there are multiple state variables?</li>
+Write a console.log for each lifecycle method</li>
+Play with the console logs to find out the correct order of their execution</li>
+
+
+Create  interval inside componentDidMount?
+	
+Use clearInterval to fix the issue caused by that interval</li>
+
+
+React Life Cycle Method Diagram - <a href="https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/" target="_blank">https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
+Code Link - <a href="https://bitbucket.org/namastedev/namaste-react-live/src/master/" target="_blank">https://bitbucket.org/namastedev/namaste-react-live/src/master/
