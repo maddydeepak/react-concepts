@@ -22,7 +22,7 @@ const RestaurantMenu = () => {
       <h2>City: {restaurantDetails.city}</h2>
       <h2>Cost for Two: {restaurantDetails.costForTwo} INR</h2>
       <ul>
-        {Object.values(restaurantDetails.menu.items).map((item) => (
+        {Object.values(restaurantDetails?.menu?.items)?.map((item) => (
           <li key={item.id}>{item.name}</li>
         ))}
       </ul>

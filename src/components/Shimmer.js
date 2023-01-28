@@ -3,11 +3,11 @@ import React from "react";
 
 const Shimmer = () => {
   return (
-    <div className="restaurant-list">
+    <div className="">
       {Array(10)
         .fill("")
         .map((index) => (
-          <div className="shimmer-card" key={index}></div>
+          <div className="" key={index}></div>
         ))}
     </div>
   );
