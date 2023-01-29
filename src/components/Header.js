@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../components/assets/img/logo.png";
+import logo from "../assets/img/logo.png";
 
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);

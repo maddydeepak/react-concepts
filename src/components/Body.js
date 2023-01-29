@@ -1,9 +1,8 @@
-import { restaurantList } from "../constants";
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
-import { filterData } from "../components/utils/helper";
-import useOnline from "../components/utils/useOnline";
+import { filterData } from "../utils/helper";
+import useOnline from "../utils/useOnline";
 import { Link } from "react-router-dom";
 
 const Body = () => {
