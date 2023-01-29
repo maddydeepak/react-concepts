@@ -34,7 +34,7 @@ const Body = () => {
       <div className="p-5 bg-pink-50">
         <input
           type="text"
-          className="focus:bg-green-300"
+          className=""
           placeholder="Search Restaurants"
           value={searchText}
           onChange={(e) => {
@@ -42,13 +42,13 @@ const Body = () => {
           }}
         />
         <button
-          className=""
+          className="border border-green-900 mx-2 px-1 bg-gray-400 rounded-md"
           onClick={() => {
             const data = filterData(searchText, restaurants);
             setFilteredRestaurants(data);
           }}
         >
-          Search
+          <span className="text-sm">Search</span>
         </button>
       </div>
       <div className="flex flex-wrap">

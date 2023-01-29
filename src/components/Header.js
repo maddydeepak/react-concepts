@@ -5,7 +5,7 @@ import logo from "../assets/img/logo.png";
 const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
-    <div className="flex justify-between bg-pink-50 shadow-lg">
+    <div className="flex justify-between bg-gray-200 border border-gray-400 shadow-xl">
       <Link to="/">
         <img src={logo} className="h-28 p-2" alt="logo"></img>
       </Link>
