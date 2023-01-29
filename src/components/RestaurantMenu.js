@@ -4,28 +4,39 @@ import { IMG_CDN_URL } from "../constants";
 import { FETCH_MENU_URL } from "../constants";
 const RestaurantMenu = () => {
   const { resId } = useParams();
-  const [restaurantDetails, setRestaurantDetails] = useState({});
+  const [restaurant, setRestauraunt] = useState({});
+
   useEffect(() => {
     getRestaurantInfo();
   }, []);
+
   async function getRestaurantInfo() {
     const data = await fetch(FETCH_MENU_URL + resId);
     const json = await data.json();
-    console.log(json.data);
-    setRestaurantDetails(json.data);
+    setRestauraunt(json.data);
   }
   return (
     <>
-      <h1>{restaurantDetails.name}</h1>
-      <img src={IMG_CDN_URL + restaurantDetails.cloudinaryImageId} />
-      <h2>Area: {restaurantDetails.area}</h2>
-      <h2>City: {restaurantDetails.city}</h2>
-      <h2>Cost for Two: {restaurantDetails.costForTwo} INR</h2>
-      <ul>
-        {Object.values(restaurantDetails?.menu?.items)?.map((item) => (
-          <li key={item.id}>{item.name}</li>
-        ))}
-      </ul>
+      <div className="menu">
+        <div>
+          <h1>Restraunt id: {resId}</h1>
+          <h2>{restaurant?.name}</h2>
+          <img src={IMG_CDN_URL + restaurant?.cloudinaryImageId} />
+          <h3>{restaurant?.area}</h3>
+          <h3>{restaurant?.city}</h3>
+          <h3>{restaurant?.avgRating} stars</h3>
+          <h3>{restaurant?.costForTwoMsg}</h3>
+        </div>
+        <div>
+          <h1>Menu</h1>
+          <ul>
+            {restaurant?.menu?.items &&
+              Object.values(restaurant?.menu?.items).map((item) => (
+                <li key={item.id}>{item.name}</li>
+              ))}
+          </ul>
+        </div>
+      </div>
     </>
   );
 };
