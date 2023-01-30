@@ -9,7 +9,7 @@ const RestaurantCard = ({
   cloudinaryImageId,
 }) => {
   return (
-    <div className="bg-gray-200 border border-gray-300 shadow-xl p-2 m-2 h-auto w-44 rounded-md">
+    <div className="bg-gray-200 border border-gray-300 shadow-xl p-2 m-2 h-64 w-52 rounded-md">
       <img src={IMG_CDN_URL + cloudinaryImageId}></img>
       <h3 className="my-2 text-sm font-bold">{name}</h3>
       <h4 className="text-sm">{cuisines.join(", ")}</h4>
