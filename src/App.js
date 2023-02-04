@@ -9,6 +9,9 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Instamart from "./components/Instamart";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
+import { Provider } from "react-redux";
+import store from "./utils/store";
+import Cart from "./components/Cart";
 
 // const heading1 = React.createElement("h1", { id: "title1" }, "Namaste One !");
 // const heading2 = React.createElement("h2", { id: "title2" }, "Namaste Two !");
@@ -22,9 +25,11 @@ import RestaurantMenu from "./components/RestaurantMenu";
 const AppLayout = () => {
   return (
     <>
-      <Header />
-      <Outlet />
-      <Footer />
+      <Provider store={store}>
+        <Header />
+        <Outlet />
+        <Footer />
+      </Provider>
     </>
   );
 };
@@ -50,6 +55,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/restaurant/:resId",
         element: <RestaurantMenu />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
   },

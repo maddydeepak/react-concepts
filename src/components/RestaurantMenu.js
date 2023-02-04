@@ -1,10 +1,17 @@
 import { useParams } from "react-router-dom";
 import { IMG_CDN_URL } from "../constants";
 import useRestaurant from "../utils/useRestaurant";
+import { addItem } from "../utils/cartSlice";
+import { useDispatch } from "react-redux";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
   const restaurant = useRestaurant(resId);
+  const dispatch = useDispatch();
+
+  const addItemHandler = (item) => {
+    dispatch(addItem(item));
+  };
 
   return (
     <>
@@ -23,7 +30,15 @@ const RestaurantMenu = () => {
           <ul className="">
             {restaurant?.menu?.items &&
               Object.values(restaurant?.menu?.items).map((item) => (
-                <li key={item.id}>{item.name}</li>
+                <li key={item.id}>
+                  {item.name}{" "}
+                  <button
+                    className="bg-green-400 m-1"
+                    onClick={() => addItemHandler(item)}
+                  >
+                    Add Item
+                  </button>
+                </li>
               ))}
           </ul>
         </div>
