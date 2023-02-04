@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -12,23 +12,21 @@ import RestaurantMenu from "./components/RestaurantMenu";
 import { Provider } from "react-redux";
 import store from "./utils/store";
 import Cart from "./components/Cart";
-
-// const heading1 = React.createElement("h1", { id: "title1" }, "Namaste One !");
-// const heading2 = React.createElement("h2", { id: "title2" }, "Namaste Two !");
-// const container = React.createElement("div", { id: "container" }, [
-//   heading1,
-//   heading2,
-// ]);
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-// root.render(container);
+import UserContext from "./utils/UserContext";
 
 const AppLayout = () => {
+  const [user, setUser] = useState({
+    name: "Deepak Maddheshiya",
+    email: "maddy@gmail.com",
+  });
   return (
     <>
       <Provider store={store}>
-        <Header />
-        <Outlet />
-        <Footer />
+        <UserContext.Provider value={{ user: user, setUser: setUser }}>
+          <Header />
+          <Outlet />
+          <Footer />
+        </UserContext.Provider>
       </Provider>
     </>
   );
