@@ -16,7 +16,7 @@ const Cart = () => {
     <>
       <h1 className="font-bold text-3xl m-2">Cart Items: {cartItems.length}</h1>
       <button
-        className="btn btn-blue bg-red-300 m-2 text-green-900 font-bold p-2"
+        className="bg-red-300 m-2 text-green-900 font-bold p-2"
         onClick={() => emptyCartHandler()}
       >
         Empty Cart

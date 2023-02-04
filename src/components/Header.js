@@ -23,11 +23,11 @@ const Header = () => {
         <Link to="/contact">
           <li className="px-2">Contact</li>
         </Link>
-        <Link to="/cart">
-          <li className="px-2">Cart {cartItems.length} Items</li>
-        </Link>
       </ul>
       <span className="font-bold text-red-900 m-2 ">{user.name}</span>
+      <Link to="/cart" className="px-2">
+        Cart {cartItems.length} Items
+      </Link>
       {isLoggedIn ? (
         <button onClick={() => setIsLoggedIn(false)}>Logout</button>
       ) : (
