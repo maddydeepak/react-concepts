@@ -3,6 +3,7 @@ import { IMG_CDN_URL } from "../constants";
 import useRestaurant from "../utils/useRestaurant";
 import { addItem } from "../utils/cartSlice";
 import { useDispatch } from "react-redux";
+import MenuHeader from "./MenuHeader";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
@@ -15,6 +16,7 @@ const RestaurantMenu = () => {
 
   return (
     <>
+      <MenuHeader restaurant={restaurant} />
       <div className="flex">
         <div className="m-1">
           <h2 className="font-bold text-lg m-2">{restaurant?.name}</h2>

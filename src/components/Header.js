@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <div className="flex justify-between bg-gray-200 border border-gray-400 shadow-xl">
       <Link to="/">
-        <img src={logo} className="h-28 p-2" alt="logo"></img>
+        <img src={logo} className="h-20 p-2" alt="logo"></img>
       </Link>
       <ul className="flex py-2 px-2">
         <Link to="/">
